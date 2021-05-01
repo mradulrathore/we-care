@@ -150,6 +150,10 @@ class _HomePageState extends State<HomePage> {
     title: "Buy safety tools",
     //  img: "assets/setting.png",
   );
+  Items item10 = new Items(
+    title: "See Crime Rate",
+    //  img: "assets/setting.png",
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -600,6 +604,52 @@ class _HomePageState extends State<HomePage> {
                       //   width: 42,
                       // ),
                       Icon(
+                        Icons.bar_chart_rounded,
+                        color: myColor,
+                        size: 80.0,
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Text(
+                        item9.title,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.openSans(
+                            textStyle: TextStyle(
+                                color: headerColor,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Shop()));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      // Image.asset(
+                      //   data.img,
+                      //   width: 42,
+                      // ),
+                      Icon(
                         Icons.shopping_cart_rounded,
                         color: myColor,
                         size: 80.0,
@@ -633,18 +683,15 @@ class Items {
 }
 
 _makingPhoneCall(number) async {
-  bool res =  await FlutterPhoneDirectCaller.callNumber(number);
+  bool res = await FlutterPhoneDirectCaller.callNumber(number);
 }
 
 void _sendSMS(number, location) async {
-   var uri = 'sms:' +
-      number +
-      '?body=testing\n My current location is: ' +
-      location;
-   SmsSender sender = new SmsSender();
-    sender.sendSms(new SmsMessage(""+number, uri));
+  var uri =
+      'sms:' + number + '?body=testing\n My current location is: ' + location;
+  SmsSender sender = new SmsSender();
+  sender.sendSms(new SmsMessage("" + number, uri));
 
-  
   // if (await canLaunch(uri)) {
   //   await launch(uri);
   // } else {
