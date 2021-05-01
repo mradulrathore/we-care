@@ -51,6 +51,9 @@ dependencies:
   bubble: ^1.2.1
   flutter_phone_direct_caller: ^2.0.0
   sms_maintained: ^0.2.5
+  country_state_city_picker: ^1.2.7
+  fl_chart: ^0.36.0
+
   # youtube_player_flutter: ^7.0.0+7
   # uuid: ^2.0.0
   ##audioplayers: ^0.17.4

@@ -7,6 +7,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:latlng/latlng.dart';
+import 'package:shehacks_team_055/mainfunctionality/crime_rate.dart';
 import 'package:sms_maintained/sms.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:geocoder/geocoder.dart';
@@ -170,6 +171,7 @@ class _HomePageState extends State<HomePage> {
       item5,
       item6,
       item7,
+      item10,
       item8,
       // item8,
     ];
@@ -581,7 +583,7 @@ class _HomePageState extends State<HomePage> {
               GestureDetector(
                 onTap: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Shop()));
+                      context, MaterialPageRoute(builder: (context) => CrimeRate()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -612,7 +614,7 @@ class _HomePageState extends State<HomePage> {
                         height: 14,
                       ),
                       Text(
-                        item9.title,
+                        item10.title,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(

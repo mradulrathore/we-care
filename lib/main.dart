@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             fontFamily: "GoogleSans",
             primarySwatch: Colors.amberAccent[600],
           ),
-          home: OnboardingScreen(),
+          home: HomePage(),//OnboardingScreen(),
           routes: {
             LoginScreen.routeName: (ctx) => LoginScreen(),
             HomePage.routeName: (ctx) => HomePage(),
