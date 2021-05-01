@@ -687,8 +687,7 @@ _makingPhoneCall(number) async {
 }
 
 void _sendSMS(number, location) async {
-  var uri =
-      'sms:' + number + '?body=testing\n My current location is: ' + location;
+  var uri = 'I need help \n My current location is: ' + location;
   SmsSender sender = new SmsSender();
   sender.sendSms(new SmsMessage("" + number, uri));
 
