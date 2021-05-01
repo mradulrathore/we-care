@@ -2,20 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shehacks_team_055/screens/authentication.dart';
-import 'package:shehacks_team_055/screens/homepage.dart';
-import 'package:shehacks_team_055/screens/login_screen.dart';
-import 'package:shehacks_team_055/screens/onboarding_screen.dart';
-import 'package:shehacks_team_055/screens/register.dart';
-import 'package:shehacks_team_055/screens/signup_screen.dart';
-import 'package:shehacks_team_055/screens/slide.dart';
+import 'screens/authentication.dart';
+
+
 
 import 'screens/homepage.dart';
-import 'screens/homepage.dart';
-import 'screens/homepage.dart';
+
+import 'screens/login_screen.dart';
 import 'screens/onboarding_screen.dart';
-import 'screens/onboarding_screen.dart';
-import 'screens/onboarding_screen.dart';
+
+
 //import 'package:app_onboarding/screens/onboarding_screen.dart';
 
 void main() async {

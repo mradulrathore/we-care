@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shehacks_team_055/data/data.dart';
+
 import 'dart:io';
+
+import '../data/data.dart';
 
 class SlideScreen extends StatefulWidget {
   @override

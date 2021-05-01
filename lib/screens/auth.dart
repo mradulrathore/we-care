@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:shehacks_team_055/screens/user.dart';
+
+import 'user.dart';
+
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;

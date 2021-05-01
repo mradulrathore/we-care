@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shehacks_team_055/screens/signup_screen.dart';
-import 'package:shehacks_team_055/screens/welcome_screen.dart';
-import 'package:shehacks_team_055/utilities/styles.dart';
 
+import '../utilities/styles.dart';
 import 'welcome_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {

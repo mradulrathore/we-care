@@ -1,9 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
-import 'package:shehacks_team_055/screens/login_screen.dart';
-import 'package:shehacks_team_055/screens/register.dart';
-import 'package:shehacks_team_055/utilities/round_button.dart';
+import '../utilities/round_button.dart';
+import 'login_screen.dart';
+import 'register.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';

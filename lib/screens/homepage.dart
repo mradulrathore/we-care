@@ -6,19 +6,19 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:latlng/latlng.dart';
-import 'package:shehacks_team_055/mainfunctionality/chat_bot.dart';
-import 'package:shehacks_team_055/mainfunctionality/learnselfdefence.dart';
-import 'package:shehacks_team_055/mainfunctionality/playfakecall.dart';
-import 'package:shehacks_team_055/mainfunctionality/safetytips.dart';
-import 'package:shehacks_team_055/screens/appBar.dart';
-import 'package:shehacks_team_055/screens/auth.dart';
-import 'package:shehacks_team_055/screens/constants.dart';
-import 'package:shehacks_team_055/screens/customWaveIndicator.dart';
-import 'package:shehacks_team_055/screens/login_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:geocoder/geocoder.dart';
 
+import '../mainfunctionality/chat_bot.dart';
+import '../mainfunctionality/learnselfdefence.dart';
 import '../mainfunctionality/listview.dart';
+import '../mainfunctionality/playfakecall.dart';
+import '../mainfunctionality/safetytips.dart';
+import 'appBar.dart';
+import 'auth.dart';
+import 'constants.dart';
+import 'customWaveIndicator.dart';
+import 'login_screen.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shehacks_team_055/screens/appBar.dart';
+
+import '../screens/appBar.dart';
+
 
 class SafetyTips extends StatelessWidget {
   var list = [
