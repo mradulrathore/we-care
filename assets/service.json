@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proven-reporter-307506",
+  "private_key_id": "da9aabe27a2048501376e8b56f80b3e46c56f3d7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCz+L9D/99NkTdW\nxqBc+c57r8r3+oWNE96EUQAr0r6gFLMI/tB5o7mme68JsJ2SBwUckfhU0wVlQodD\n1y1GsnfJdmivwmz3HJlGU1HCX83+v1f6V6jJqCl0onsQQPnV0QFaUpoDw3n1nqH0\nxep3HYPNpCEePmkzH1lltoa6ApRzqt/pAOOXbYK5JTyfPKTslKCBVkOv6QIga6pT\n0EiXKMWBeOY5dtFq5JJp4SNQscAmQeREell4RAO2aUURt82r7iwqe4dwB27Uso1R\ny1fV5ByJuHAQ1szfVNUZMY+eDxFupPcCr+PNuVA0zwhycrxPVl6RWUSkXcXrJ6c8\n1v+49hPhAgMBAAECggEAF2kbEDBfjsp+BVavE4kXN/WlFF7NMo3MGzAiMpEmZNJs\ne5YR7lDC3IooOb10scMiAhZm1Dni8MoXqFZ8OD8M3/L8KSjEXdylf4VlFEC8HhAr\n1I/Ej/7E7bwZAANDvHGEmIg4Kpcp7S5maN254ya+t2hLOpDpxFGmoll86wNc5jKy\n2eL+7FFWBeTZDGWmQ9yQec/Bx4lTy/e8a6W3GohBHS1S16WdmrHQpKJReOTvrH5s\n6jjPPInEZypjtpwojyX1mBjaiH3hXKaL4xsyXXWTRGGjk1ceUmeJxKw1dwJoUX9m\nR4aDQjfw5aev2w+6p9g+4ufUCUboa7YmshYXsj6ONQKBgQDwuL+Bf/FyMwVjIeZt\nOuVQIKUUc08QxzQMrrImc49IY7MvzGopODuWgPjO+ETX5a7pMZKLue88eMeQqJS/\nmtQo7MaW9H1dAH/uEX9dh8d+Fvbfphsqc1OaTVdHJ9eJzPErbwDD/XKAk1mTjocB\nl/5dMrbRj2qJzq6mDnnHj5EklwKBgQC/ZO5yqJQbmQv4zYYvPZEIxsjrgwRToCkZ\nmDN2LwetTOe8OPb/kuvoxINeIOtA6noiXOBAp7++mCVyb6/q3Pwzhsjj1HGZorZQ\nhlKZnvuI6yWAxbNyVEksvHp0kXzEgQJEv1pbo9tz5zq74x9bt1jDn/T4zJx1iemS\nhBL+UKpCRwKBgQC+6Ua4ZcgPUfeLz274YiVLjxhdR7YFEHdvN32CkVOpjaim1++6\nESbxDghF3RB8SWSW/QHEXwolY4SibZDLBPgOHPrC7dQe1i6fmLDydKT6kyvn48zX\nte8wCPaXMDn4x9jdIYPx7CfLYRFBvV/FG85YC8iCGsPb11cby485fdsWsQKBgGjz\nTrG+8SBFB0SSZq9G4l3eq1RBjsDQhVkMlcOLvHjyP+x9jCvPA9+qyqJ2CKqbKQfo\nx+uMUN+RjI844U03inAyy7vqxbRKfhCf53FntWR6FSGMx3686zdFzxxWnwUd/QF3\nsHOp4W+n7xQSUiK34ku7TdiUUoM9ccAu/j9IOmSHAoGANpdrwjXKcktdQJGvScsp\nxshsOnEPe3MmUfh16MImrzJH0WjTOWorOAvDefzUBz4+AVgzXjJM01f8vjsCL7Bz\nCR9qYMtBC5sfFU3NiutJt7MKKogt7gizcxuNSM8GgLvUSuWdKTFUflFRSdkU/WFr\nC/kzn9tcPoGpBVwwr9Z6wS4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "chatbot@proven-reporter-307506.iam.gserviceaccount.com",
+  "client_id": "100975995642023479067",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/chatbot%40proven-reporter-307506.iam.gserviceaccount.com"
+}

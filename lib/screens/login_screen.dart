@@ -1,10 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shehacks_team_055/screens/homepage.dart';
 
-import 'signup_screen.dart';
-
-import 'authentication.dart';
+import 'homepage.dart';
 
 class LoginScreen extends StatefulWidget {
   static const routeName = '/login';
@@ -41,9 +39,15 @@ class _LoginScreenState extends State<LoginScreen> {
     _formKey.currentState.save();
 
     try {
-      await Provider.of<Authentication>(context, listen: false)
-          .logIn(_authData['email'], _authData['password']);
-      Navigator.of(context).pushReplacementNamed(HomePage.routeName);
+      // await Provider.of<Authentication>(context, listen: false)
+      //     .logIn(_authData['email'], _authData['password']);
+
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _authData['email'], password: _authData['password']);
+
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+      // Navigator.of(context).pushReplacementNamed(HomePage.routeName);
     } catch (error) {
       var errorMessage = 'Authentication Failed. Please try again later.';
       _showErrorDialog(errorMessage);
@@ -54,27 +58,16 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Color(0XFFc2185b),
         title: Text('Login'),
-        backgroundColor: Color(0xFF5B16D0),
-        actions: <Widget>[
-          FlatButton(
-            child: Row(
-              children: <Widget>[Text('Signup'), Icon(Icons.person_add)],
-            ),
-            textColor: Colors.white,
-            onPressed: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(SignupScreen.routeName);
-            },
-          )
-        ],
       ),
       body: Stack(
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-              Colors.purple[100],
+              Colors.yellow[100],
               Colors.blue[50],
             ])),
           ),
@@ -94,12 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: <Widget>[
                         //email
                         TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Email',
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF5B16D0)),
-                            ),
-                          ),
+                          decoration: InputDecoration(labelText: 'Email'),
                           keyboardType: TextInputType.emailAddress,
                           validator: (value) {
                             if (value.isEmpty || !value.contains('@')) {
@@ -114,12 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         //password
                         TextFormField(
-                          decoration: InputDecoration(
-                            labelText: 'Password',
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xFF5B16D0)),
-                            ),
-                          ),
+                          decoration: InputDecoration(labelText: 'Password'),
                           obscureText: true,
                           validator: (value) {
                             if (value.isEmpty || value.length <= 5) {
@@ -142,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          color: Color(0xFF5B16D0),
+                          color: Color(0XFFc2185b),
                           textColor: Colors.white,
                         )
                       ],

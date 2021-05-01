@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:latlng/latlng.dart';
+import 'package:shehacks_team_055/mainfunctionality/chat_bot.dart';
 import 'package:shehacks_team_055/mainfunctionality/learnselfdefence.dart';
 import 'package:shehacks_team_055/mainfunctionality/playfakecall.dart';
 import 'package:shehacks_team_055/mainfunctionality/safetytips.dart';
@@ -29,7 +30,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   User currentUser;
   String _currentLocation = "";
-
+  Color myColor = const Color(0XFFFF748C);
+  Color headerColor = const Color(0xFFF794B9);
+  //const Color(0XFFFF748C)
   String _name, _email, _emergency, _contact;
 
   Widget _child;
@@ -110,6 +113,12 @@ class _HomePageState extends State<HomePage> {
     //img: "assets/food.png",
   );
 
+  Items item9 = new Items(
+    title: "ChatBot",
+
+    // img: "assets/calendar.png"
+  );
+
   Items item3 = new Items(
     title: "Play police siren",
     //img: "assets/map.png",
@@ -149,6 +158,7 @@ class _HomePageState extends State<HomePage> {
     List<Items> myList = [
       item1,
       item2,
+      item9,
       item3,
       item4,
       item5,
@@ -164,7 +174,7 @@ class _HomePageState extends State<HomePage> {
         title: AppLogo(),
         brightness: Brightness.light,
         elevation: 0.0,
-        backgroundColor: Color(0xFF5B16D0),
+        backgroundColor: Color(0XFFc2185b),
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20.0),
@@ -221,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.call,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -232,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -266,7 +276,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.call,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -277,7 +287,53 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ChatBot()));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      // Image.asset(
+                      //   data.img,
+                      //   width: 42,
+                      // ),
+                      Icon(
+                        Icons.android_rounded,
+                        color: myColor,
+                        size: 80.0,
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Text(
+                        item9.title,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.openSans(
+                            textStyle: TextStyle(
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -312,7 +368,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.notification_important_rounded,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -323,7 +379,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -358,7 +414,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.play_circle_fill_rounded,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -369,7 +425,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -403,7 +459,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.edit_location_rounded,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -414,7 +470,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -449,7 +505,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.lightbulb,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -460,7 +516,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -497,7 +553,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.fitness_center_rounded,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -508,7 +564,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -543,7 +599,7 @@ class _HomePageState extends State<HomePage> {
                       // ),
                       Icon(
                         Icons.shopping_cart_rounded,
-                        color: Color(0xFF5B16D0),
+                        color: myColor,
                         size: 80.0,
                       ),
                       SizedBox(
@@ -554,7 +610,7 @@ class _HomePageState extends State<HomePage> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
-                                color: Color(0xFF5B16D0),
+                                color: headerColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600)),
                       ),

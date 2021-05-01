@@ -3,7 +3,7 @@
 <p align="center">
     <!-- <img src="" alt="Screenshot" width="80" height="80"> -->
 
-  <h3 align="center">HelpYourSelf</h3>
+  <h3 align="center">WeCaref</h3>
 </p>
 <!-- ABOUT THE PROJECT -->
 

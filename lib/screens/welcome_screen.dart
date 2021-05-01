@@ -1,4 +1,4 @@
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:shehacks_team_055/screens/login_screen.dart';
@@ -49,40 +49,40 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           children: <Widget>[
             Row(
               children: <Widget>[
-                Hero(
-                  tag: 'logo',
-                  child: Container(
-                    child: Image.asset('assets/logo.png'),
-                    height: 60.0,
+                // Hero(
+                //   tag: 'logo',
+                //   child: Container(
+                //     child: Image.asset('assets/logo.png'),
+                //     height: 60.0,
+                //   ),
+                // ),
+                TypewriterAnimatedTextKit(
+                  text: ['We Care'],
+                  textStyle: TextStyle(
+                    fontSize: 45.0,
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
-              //   TypewriterAnimatedTextKit(
-              //     text: ['Jeevan'],
-              //     textStyle: TextStyle(
-              //       fontSize: 45.0,
-              //       fontWeight: FontWeight.w900,
-              //     ),
-              //   ),
-               ],
+              ],
             ),
             SizedBox(
               height: 48.0,
             ),
             RoundedButton(
               title: 'Log In',
-              colour: Colors.amberAccent[700],
+              colour: Color(0XFFc2185b),
               onPressed: () {
                 // Navigator.of(context).pushNamed(LoginScreen.routeName);
-                Navigator.pushReplacement(context,
+                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => LoginScreen()));
               },
             ),
             RoundedButton(
               title: 'Register',
-              colour: Colors.amberAccent[700],
+              colour: Color(0XFFc2185b),
               onPressed: () {
                 // Navigator.of(context).pushNamed(RegisterPage.routeName);
-                Navigator.pushReplacement(context,
+                Navigator.push(context,
                     MaterialPageRoute(builder: (context) => RegisterPage()));
               },
             ),
