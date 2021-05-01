@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'screens/authentication.dart';
 
 
@@ -10,6 +11,7 @@ import 'screens/homepage.dart';
 
 import 'screens/login_screen.dart';
 import 'screens/onboarding_screen.dart';
+import 'screens/tmp.dart';
 
 
 //import 'package:app_onboarding/screens/onboarding_screen.dart';
@@ -33,13 +35,13 @@ class MyApp extends StatelessWidget {
           )
         ],
         child: MaterialApp(
-          title: 'SheHacks',
+          title: 'We Care',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             fontFamily: "GoogleSans",
-            primarySwatch: Colors.pink[400],
+            primarySwatch: Colors.amberAccent[600],
           ),
-          home: HomePage(),
+          home: OnboardingScreen(),
           routes: {
             LoginScreen.routeName: (ctx) => LoginScreen(),
             HomePage.routeName: (ctx) => HomePage(),

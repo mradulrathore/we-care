@@ -2,10 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:latlng/latlng.dart';
+import 'package:sms_maintained/sms.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:geocoder/geocoder.dart';
 
@@ -631,24 +633,23 @@ class Items {
 }
 
 _makingPhoneCall(number) async {
-  var url = 'tel:' + number;
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
+  bool res =  await FlutterPhoneDirectCaller.callNumber(number);
 }
 
 void _sendSMS(number, location) async {
-  var uri = 'sms:' +
+   var uri = 'sms:' +
       number +
-      '?body=I Need help!!!\n My current location is: ' +
+      '?body=testing\n My current location is: ' +
       location;
-  if (await canLaunch(uri)) {
-    await launch(uri);
-  } else {
-    throw 'Could not launch $uri';
-  }
+   SmsSender sender = new SmsSender();
+    sender.sendSms(new SmsMessage(""+number, uri));
+
+  
+  // if (await canLaunch(uri)) {
+  //   await launch(uri);
+  // } else {
+  //   throw 'Could not launch $uri';
+  // }
 }
 
 _playSiren(link) async {
