@@ -8,8 +8,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:latlng/latlng.dart';
 import 'package:shake/shake.dart';
-import 'package:shehacks_team_055/mainfunctionality/crime_rate.dart';
-import 'package:shehacks_team_055/screens/play_audio.dart';
+import 'package:shehacks_team_055/mainfunctionality/fake_call_support.dart';
+import '../mainfunctionality/crime_rate.dart';
+
+
 import 'package:sms_maintained/sms.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:geocoder/geocoder.dart';
@@ -26,6 +28,7 @@ import 'constants.dart';
 import 'customWaveIndicator.dart';
 import 'login_screen.dart';
 import 'message.dart';
+import 'play_audio.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -163,6 +166,10 @@ class _HomePageState extends State<HomePage>
     //  img: "assets/setting.png",
   );
 
+  Items item11 = new Items(
+    title: "Fake Call",
+    //  img: "assets/setting.png",
+  );
   @override
   Widget build(BuildContext context) {
     return _child;
@@ -220,6 +227,7 @@ class _HomePageState extends State<HomePage>
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             children: <Widget>[
+              
               GestureDetector(
                 onTap: () {
                   //_makingPhoneCall(_emergency);
@@ -258,6 +266,55 @@ class _HomePageState extends State<HomePage>
                       ),
                       Text(
                         item1.title,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.openSans(
+                            textStyle: TextStyle(
+                                color: headerColor,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600)),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  //_makingPhoneCall(_emergency);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => InstructionScreen()));
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 4,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      // Image.asset(
+                      //   data.img,
+                      //   width: 42,
+                      // ),
+                      Icon(
+                        Icons.call_received_rounded,
+                        color: myColor,
+                        size: 80.0,
+                      ),
+                      SizedBox(
+                        height: 14,
+                      ),
+                      Text(
+                        item11.title,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(

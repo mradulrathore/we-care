@@ -55,8 +55,8 @@ dependencies:
   fl_chart: ^0.36.0
   shake: ^1.0.0
   fancy_dialog: ^1.0.4
-
-
+  wakelock: ^0.5.1
+  flutter_ringtone_player: ^3.0.0
 
 
   # youtube_player_flutter: ^7.0.0+7
