@@ -29,7 +29,7 @@ class _ChatBotState extends State<ChatBot> {
       setState(() {
         messsages.insert(0, {"data": 0, "message": "hello"});
       });
-    } else if (query == 'i suffered from something') {
+    } else if (query == 'I suffered from something') {
       setState(() {
         messsages.insert(0, {"data": 0, "message": "Tell me!! What happened?"});
       });

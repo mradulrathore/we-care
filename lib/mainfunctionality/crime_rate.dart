@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String countryValue;
+  String countryValue="India";
   String stateValue;
   String cityValue;
   Widget child;
@@ -42,11 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           SelectState(
             // style: TextStyle(color: Colors.red),
-            onCountryChanged: (value) {
-              setState(() {
-                countryValue = value;
-              });
-            },
+           
             onStateChanged: (value) {
               setState(() {
                 stateValue = value;

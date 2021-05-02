@@ -23,7 +23,7 @@ class _InstructionScreenState extends State<InstructionScreen> {
   static const textValues = <String>['Now', '1 min', '3 min', '5 min'];
   int selectedValue = values.first;
 
-  final selectedColor = Colors.green;
+  final selectedColor = Color(0XFFFF748C);
   final unselectedColor = Colors.white;
 
   TextEditingController _fakeName;
@@ -63,44 +63,24 @@ class _InstructionScreenState extends State<InstructionScreen> {
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: ExactAssetImage('assets/mapImage.jpg'),
+                image: ExactAssetImage('assets/fakeCallBG.jpeg'),
                 fit: BoxFit.cover),
           ),
           child: ListView(
+          
             shrinkWrap: true,
             children: <Widget>[
               SizedBox(
                 height: 25.0,
               ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.keyboard_arrow_left,
-                        size: 40.0,
-                        color: Colors.amber,
-                      ),
-                      Text(
-                        'Back',
-                        style: TextStyle(fontSize: 25.0, color: Colors.amber),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                padding: EdgeInsets.only(left: 15.0, top: 10.0),
-                child: Text(
-                  'Fake Call',
-                  style: TextStyle(color: Colors.white, fontSize: 25.0),
-                ),
-              ),
+              // Container(
+              //   alignment: Alignment.centerLeft,
+              //   padding: EdgeInsets.only(left: 15.0, top: 10.0),
+              //   child: Text(
+              //     'Fake Call',
+              //     style: TextStyle(color: Colors.white, fontSize: 25.0),
+              //   ),
+              // ),
               Container(
                   padding: EdgeInsets.only(
                     left: 15.0,
@@ -161,17 +141,20 @@ class _InstructionScreenState extends State<InstructionScreen> {
                 width: MediaQuery.of(context).size.width / 2,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.green,
+                    primary: Color(0XFFFF748C),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
                   onPressed: _activateBtnStatus ? readyForCall : null,
-                  child: Text(
-                    'Activate',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25.0,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Make a Fake Call',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
+                      ),
                     ),
                   ),
                 ),
@@ -228,7 +211,6 @@ class _InstructionScreenState extends State<InstructionScreen> {
                 "Wait for ${textValues[selectedValue]} ... Don't switch to other screen")));
       }
       Future.delayed(Duration(minutes: selectedValue), () {
-        
         print("I'm transitioning to fakecall screen");
         Navigator.pushReplacement(
             context,
