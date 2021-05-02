@@ -53,6 +53,11 @@ dependencies:
   sms_maintained: ^0.2.5
   country_state_city_picker: ^1.2.7
   fl_chart: ^0.36.0
+  shake: ^1.0.0
+  fancy_dialog: ^1.0.4
+
+
+
 
   # youtube_player_flutter: ^7.0.0+7
   # uuid: ^2.0.0

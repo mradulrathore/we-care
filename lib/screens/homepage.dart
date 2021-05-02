@@ -7,7 +7,9 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:latlng/latlng.dart';
+import 'package:shake/shake.dart';
 import 'package:shehacks_team_055/mainfunctionality/crime_rate.dart';
+import 'package:shehacks_team_055/screens/play_audio.dart';
 import 'package:sms_maintained/sms.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:geocoder/geocoder.dart';
@@ -19,9 +21,11 @@ import '../mainfunctionality/playfakecall.dart';
 import '../mainfunctionality/safetytips.dart';
 import 'appBar.dart';
 import 'auth.dart';
+import 'call.dart';
 import 'constants.dart';
 import 'customWaveIndicator.dart';
 import 'login_screen.dart';
+import 'message.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -30,7 +34,11 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  Animation<double> _animation;
+  AnimationController _animationController;
+
   User currentUser;
   String _currentLocation = "";
   Color myColor = const Color(0XFFFF748C);
@@ -105,11 +113,10 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  Items item1 = new Items(
-    title: "Call my emergency contact",
+  Items item1 = new Items(title: "Call Emergency/Women Helpline"
 
-    // img: "assets/calendar.png"
-  );
+      // img: "assets/calendar.png"
+      );
 
   Items item2 = new Items(
     title: "Call women helpline",
@@ -123,7 +130,7 @@ class _HomePageState extends State<HomePage> {
   );
 
   Items item3 = new Items(
-    title: "Play police siren",
+    title: "Play Recorded Audio/Siren",
     //img: "assets/map.png",
   );
 
@@ -215,7 +222,11 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               GestureDetector(
                 onTap: () {
-                  _makingPhoneCall(_emergency);
+                  //_makingPhoneCall(_emergency);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Call(_emergency)));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -247,51 +258,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Text(
                         item1.title,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.openSans(
-                            textStyle: TextStyle(
-                                color: headerColor,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600)),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _makingPhoneCall(_police);
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      // Image.asset(
-                      //   data.img,
-                      //   width: 42,
-                      // ),
-                      Icon(
-                        Icons.call,
-                        color: myColor,
-                        size: 80.0,
-                      ),
-                      SizedBox(
-                        height: 14,
-                      ),
-                      Text(
-                        item2.title,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.openSans(
                             textStyle: TextStyle(
@@ -351,8 +317,8 @@ class _HomePageState extends State<HomePage> {
               ),
               GestureDetector(
                 onTap: () {
-                  _playSiren(
-                      "https://drive.google.com/file/d/12NOzQzsKXRD3vmf0GRc1aCzoX4U-7QpV/view?usp=sharing");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PlayAudio()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -397,53 +363,12 @@ class _HomePageState extends State<HomePage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PlayFakeCall()));
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 4,
-                        offset: Offset(0, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      // Image.asset(
-                      //   data.img,
-                      //   width: 42,
-                      // ),
-                      Icon(
-                        Icons.play_circle_fill_rounded,
-                        color: myColor,
-                        size: 80.0,
-                      ),
-                      SizedBox(
-                        height: 14,
-                      ),
-                      Text(
-                        item4.title,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.openSans(
-                            textStyle: TextStyle(
-                                color: headerColor,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600)),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  _sendSMS(_emergency, _currentLocation);
+                  //_sendSMS(_emergency, _currentLocation);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              Message(_emergency, _currentLocation)));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -582,8 +507,8 @@ class _HomePageState extends State<HomePage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => CrimeRate()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CrimeRate()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -682,29 +607,4 @@ class Items {
   String title;
   String img;
   Items({this.title, this.img});
-}
-
-_makingPhoneCall(number) async {
-  bool res = await FlutterPhoneDirectCaller.callNumber(number);
-}
-
-void _sendSMS(number, location) async {
-  var uri = 'I need help \n My current location is: ' + location;
-  SmsSender sender = new SmsSender();
-  sender.sendSms(new SmsMessage("" + number, uri));
-
-  // if (await canLaunch(uri)) {
-  //   await launch(uri);
-  // } else {
-  //   throw 'Could not launch $uri';
-  // }
-}
-
-_playSiren(link) async {
-  var url = link;
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
 }
